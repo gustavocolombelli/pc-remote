@@ -1,0 +1,80 @@
+<!doctype html>
+<style>
+	body {
+		background-color: black !important;
+		}
+
+	.p-3 {
+		font-size: 30px;
+		text-align: center;
+		font-family: arial;
+		user-select: none;
+		-webkit-touch-callout: none;
+	   -webkit-user-select: none;
+	   -khtml-user-select: none;
+	   -moz-user-select: none;
+	   -ms-user-select: none;
+	}
+
+	.bloquear-tela {
+		background: #17a2b8;
+	}
+	.spotify {
+		background: #1ed760;
+	}
+
+	.p-3:active {
+		opacity: 0.5;
+	}
+
+
+</style>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Automação NODE</title>
+  </head>
+  <body>
+
+    <a class="bloquear-tela" role="button"><div class="p-3 mb-2 text-white bloquear-tela" role="button">Bloquear Computador</div></a>
+    <a class="spotify" role="button"><div class="p-3 mb-2 text-white spotify" role="button">Spotify</div></a>
+
+
+
+
+
+    <script  src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script>
+    	$(".bloquear-tela").click(function(){
+			  $.ajax({
+				  type: 'GET',
+				  url: '../bloquear-tela',
+			}).done(function() { 
+			     $('.bloquear-tela').css("background-color", "#28a745");
+			});
+		});
+
+		$(".spotify").click(function(){
+			  $.ajax({
+				  type: 'GET',
+				  url: '../spotify',
+			}).done(function() { 
+			     $('.spotify').css("background-color", "#28a745");
+			});
+		});
+
+    </script>
+
+  </body>
+</html>
+
